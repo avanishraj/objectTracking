@@ -9,7 +9,6 @@ while True:
     img = imutils.resize(img, width=500)
     gaussImg = cv2.GaussianBlur(img, (11,11), 0)
     hsvImg = cv2.cvtColor(gaussImg, cv2.COLOR_BGR2HSV)
-    cv2.imshow("HSVImg", hsvImg)
     mask = cv2.inRange(hsvImg, redLower, redUpper)
     mask = cv2.erode(mask, None, iterations=2)
     mask = cv2.dilate(mask, None, iterations=2)
